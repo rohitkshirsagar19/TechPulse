@@ -1,14 +1,16 @@
 // src/components/PostForm.jsx
 import { useState } from 'react';
+import { useUser } from '../context/UserContext';
 
 function PostForm({ addPost }) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const { user } = useUser(); // Access the user context
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents page reload
     if (title && content) {
-      addPost({ title, content });
+      addPost({ title, content,author: user.username });
       setTitle(''); // Clear form
       setContent('');
     }
@@ -38,7 +40,7 @@ function PostForm({ addPost }) {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           className="border rounded w-full py-2 px-3 text-gray-700"
-          placeholder="What's on your mind?"
+          placeholder="What's on your mind? , ${user.username}"
         />
       </div>
       <button

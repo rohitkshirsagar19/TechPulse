@@ -12,6 +12,7 @@ function HomePage() {
       content: 'React is awesome for building UIs! 🚀',
       likes: 5,
       author: 'TechGuru',
+      comments: [], // Initialize with an empty array for comments
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ function HomePage() {
       content: 'Use arrow functions for cleaner code.',
       likes: 3,
       author: 'CodeMaster',
+      comments: [], // Initialize with an empty array for comments
     },
     ])
 
@@ -43,10 +45,18 @@ function HomePage() {
                 title: newPost.title,
                 content: newPost.content,       
                 likes: 0,
-                author: 'NewUser', // Placeholder for author
+                author: newPost.author,
+                comments: [], // Placeholder for author
             }
         ])
     }
+
+    // Function to add comments 
+    const addComment = (postID,comment) => {
+        setPosts(posts.map(post =>
+            post.id === postID ? {...post,comments : [...post.comments,comment ]} : post
+        ));
+    };
 
     return (
         <div className="container mx-auto p-4">
@@ -60,7 +70,9 @@ function HomePage() {
                         content={post.content} 
                         likes={post.likes} 
                         author={post.author}
-                        onLike={() => handleLike(post.id)} 
+                        comments={post.comments}
+                        onLike={() => handleLike(post.id)}
+                        onComment={(comment) => addComment(post.id, comment)} 
                     />
                 ))
             }
