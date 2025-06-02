@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PostCard from "../components/PostCard";
+import PostForm from "../components/PostForm";
 
 function HomePage() {
 
@@ -21,9 +22,36 @@ function HomePage() {
     },
     ])
 
+    // Function to handle like button click
+    const handleLike = (postID) => {
+        setPosts(posts.map(post => {
+            if (post.id === postID) {
+                return { ...post, likes: post.likes + 1 };
+            }
+            return post;
+        }
+
+        ))
+    }
+
+    // Function to add a new post
+    const addPost = (newPost) => {
+        setPosts([
+            ...posts,
+            {
+                id: posts.length + 1,
+                title: newPost.title,
+                content: newPost.content,       
+                likes: 0,
+                author: 'NewUser', // Placeholder for author
+            }
+        ])
+    }
+
     return (
         <div className="container mx-auto p-4">
             <h1 className="text-3xl font-bold mb-4">TechPulse Feed</h1>
+            <PostForm addPost={addPost} />
             {
                 posts.map((post) => (
                     <PostCard 
@@ -31,7 +59,8 @@ function HomePage() {
                         title={post.title} 
                         content={post.content} 
                         likes={post.likes} 
-                        author={post.author} 
+                        author={post.author}
+                        onLike={() => handleLike(post.id)} 
                     />
                 ))
             }
