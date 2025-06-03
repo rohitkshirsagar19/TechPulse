@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Learning React",
+      "content": "React is awesome for building UIs! 🚀",
+      "likes": 5,
+      "author": "TechGuru",
+      "comments": [
+        { "id": 1, "text": "Great post!", "author": "CodeFan" },
+        { "id": 2, "text": "Loving React too!", "author": "DevStar" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Tips",
+      "content": "Use arrow functions for cleaner code.",
+      "likes": 3,
+      "author": "CodeMaster",
+      "comments": []
+    }
+  ],
+  "users": []
+}

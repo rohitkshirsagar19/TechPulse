@@ -1,4 +1,4 @@
-# 🚀 TechPulse – Social Media for Tech Enthusiasts
+# 🚀 TechPulse – Social Media for Tech Enthusiasts (personal project)
 
 ## 📖 Project Overview
 
@@ -10,3 +10,5 @@
 - Follow trending topics and technologies  
 
 This full-stack app mimics the features of Twitter, Reddit, and Dev.to — but focused entirely on technology content.
+
+Under progress...
