@@ -4,11 +4,24 @@
       "id": 1,
       "title": "Learning React",
       "content": "React is awesome for building UIs! 🚀",
-      "likes": 5,
+      "likes": 8,
       "author": "TechGuru",
       "comments": [
-        { "id": 1, "text": "Great post!", "author": "CodeFan" },
-        { "id": 2, "text": "Loving React too!", "author": "DevStar" }
+        {
+          "id": 1,
+          "text": "Great post!",
+          "author": "CodeFan"
+        },
+        {
+          "id": 2,
+          "text": "Loving React too!",
+          "author": "DevStar"
+        },
+        {
+          "id": 3,
+          "text": "Amazing!!",
+          "author": "user"
+        }
       ]
     },
     {
@@ -20,5 +33,24 @@
       "comments": []
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "username": "TestUser",
+      "email": "test@example.com",
+      "password": "$2b$10$UPmtOUOXj5uO5H/5mCh9I.XdhC5qzxtS7X/MepSnNRODG5w2CwGYC"
+    },
+    {
+      "id": 2,
+      "username": "test1",
+      "email": "test1@gmail.com",
+      "password": "$2b$10$/tyJK3Gw0T5XsajQm.Yp7OdVDvgQr9mvCIAp26b4VNpvTMSX0V35a"
+    },
+    {
+      "id": 3,
+      "username": "test2",
+      "email": "test2@gmail.com",
+      "password": "$2b$10$DKze2K6lYtlOgRCLzoM9TOWCPybn9NGWIuCiURY1BgdRfoWaM0FJi"
+    }
+  ]
 }

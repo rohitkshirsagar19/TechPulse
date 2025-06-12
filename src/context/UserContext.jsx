@@ -1,18 +1,44 @@
-import { useContext,useState,createContext } from "react";
+// src/context/UserContext.jsx
+import { createContext, useContext, useState, useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode'; 
 
-// create a UserContext
 const UserContext = createContext();
 
-export function UserProvider({ children })  {
-    const [user,setUser] = useState({username: 'User123'}); // hardcoded user for simplicity
+export function UserProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
 
-    return (
-        <UserContext.Provider value={{user,setUser}}>
-            {children}
-        </UserContext.Provider>
-    );
+  useEffect(() => {
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        setUser({ id: decoded.id, username: decoded.username });
+      } catch (err) {
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem('token');
+      }
+    }
+  }, [token]);
+
+  const login = (newToken) => {
+    localStorage.setItem('token', newToken);
+    setToken(newToken);
+  };
+
+  const logout = () => {
+    setUser(null);
+    setToken(null);
+    localStorage.removeItem('token');
+  };
+
+  return (
+    <UserContext.Provider value={{ user, token, login, logout }}>
+      {children}
+    </UserContext.Provider>
+  );
 }
 
 export function useUser() {
-    return useContext(UserContext);
+  return useContext(UserContext);
 }
