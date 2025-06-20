@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Learning React",
       "content": "React is awesome for building UIs! 🚀",
-      "likes": 8,
+      "likes": 25,
       "author": "TechGuru",
       "comments": [
         {
@@ -14,43 +14,86 @@
         },
         {
           "id": 2,
-          "text": "Loving React too!",
-          "author": "DevStar"
+          "text": "qwqw",
+          "author": "user"
         },
         {
           "id": 3,
-          "text": "Amazing!!",
-          "author": "user"
+          "text": "12wdw2",
+          "author": "admin"
         }
       ]
     },
     {
       "id": 2,
-      "title": "JavaScript Tips",
-      "content": "Use arrow functions for cleaner code.",
-      "likes": 3,
-      "author": "CodeMaster",
-      "comments": []
+      "title": "JS",
+      "content": "Js JS JSjsjsjs",
+      "likes": 0,
+      "author": "user",
+      "comments": [
+        {
+          "id": 1,
+          "text": "qwqwqw",
+          "author": "user"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "test",
+      "content": "testing",
+      "likes": 35,
+      "author": "user",
+      "comments": [
+        {
+          "id": 1,
+          "text": "Helpful",
+          "author": "user"
+        },
+        {
+          "id": 2,
+          "text": "great",
+          "author": "admin"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "TS",
+      "content": "TStSTSTS",
+      "likes": 30,
+      "author": "admin",
+      "comments": [
+        {
+          "id": 1,
+          "text": "great",
+          "author": "user"
+        },
+        {
+          "id": 2,
+          "text": "amazing!",
+          "author": "user"
+        },
+        {
+          "id": 3,
+          "text": "Nice Post!",
+          "author": "user"
+        }
+      ]
     }
   ],
   "users": [
     {
       "id": 1,
-      "username": "TestUser",
-      "email": "test@example.com",
-      "password": "$2b$10$UPmtOUOXj5uO5H/5mCh9I.XdhC5qzxtS7X/MepSnNRODG5w2CwGYC"
+      "username": "user",
+      "email": "user@gmail.com",
+      "password": "$2b$10$tqRL5cyGOJjNy2P.xJt1q.NKfnjjgBpKgRYhm28meJdwTALrTU4uy"
     },
     {
       "id": 2,
-      "username": "test1",
-      "email": "test1@gmail.com",
-      "password": "$2b$10$/tyJK3Gw0T5XsajQm.Yp7OdVDvgQr9mvCIAp26b4VNpvTMSX0V35a"
-    },
-    {
-      "id": 3,
-      "username": "test2",
-      "email": "test2@gmail.com",
-      "password": "$2b$10$DKze2K6lYtlOgRCLzoM9TOWCPybn9NGWIuCiURY1BgdRfoWaM0FJi"
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$kKYEIruj/26mqwZMJg36HeHehvzfWuOTQreByhGY7ufO825ciwhBy"
     }
   ]
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PostCard from '../components/PostCard';
 import PostForm from '../components/PostForm';
+import Notification from '../components/Notification';
 import { useUser } from '../context/UserContext';
 
 function HomePage() {
@@ -108,6 +109,7 @@ function HomePage() {
 
   return (
     <div className="container mx-auto p-4">
+      <Notification />
       <h1 className="text-3xl font-bold mb-4">TechPulse Feed</h1>
       <PostForm addPost={addPost} />
       {posts.map((post) => (

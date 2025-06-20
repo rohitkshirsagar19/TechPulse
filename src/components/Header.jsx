@@ -1,9 +1,11 @@
 // src/components/Header.jsx
 import { Link } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
+import { useNotifications } from '../context/NotificationContext';
 
 function Header() {
   const { user, logout } = useUser();
+  const { notifications } = useNotifications();
 
   return (
     <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
@@ -15,8 +17,15 @@ function Header() {
         <li>
           <Link to="/profile" className="hover:text-blue-400">Profile</Link>
         </li>
-        <li>
-          <Link to="/notifications" className="hover:text-blue-400">Notifications</Link>
+        <li className="relative">
+          <Link to="/notifications" className="hover:text-blue-400">
+            Notifications
+            {notifications.length > 0 && (
+              <span className="absolute -top-2 -right-4 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {notifications.length}
+              </span>
+            )}
+          </Link>
         </li>
         {user ? (
           <>
