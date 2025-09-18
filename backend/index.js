@@ -86,7 +86,7 @@ app.post('/api/login', async (req, res) => {
   }
   const isValidPassword = await bcrypt.compare(password, user.password);
   if (!isValidPassword) {
-    return res.status(401).json({ error: 'Invalid credentials' });
+    return res.status(401).json({ error: 'Invalid Password' });
   }
   const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
   res.json({ token, user: { id: user.id, username: user.username, email: user.email } });
@@ -94,7 +94,7 @@ app.post('/api/login', async (req, res) => {
 
 app.get('/api/posts', (req, res) => {
   const db = readDb();
-  console.log('Response data:', JSON.stringify(db.posts, null, 2));
+  //console.log('Response data:', JSON.stringify(db.posts, null, 2));
   res.json(db.posts);
 });
 
@@ -107,12 +107,12 @@ app.post('/api/posts', (req, res) => {
   const newPost = { id, title, content, likes: likes || 0, author, comments: comments || [] };
   db.posts.push(newPost);
   writeDb(db);
-  console.log('Emitting new_post notification:', {
-    type: 'new_post',
-    message: `New post by ${req.user.username}: ${newPost.title}`,
-    postId: newPost.id,
-    username: req.user.username,
-  });
+  // console.log('Emitting new_post notification:', {
+  //   type: 'new_post',
+  //   message: `New post by ${req.user.username}: ${newPost.title}`,
+  //   postId: newPost.id,
+  //   username: req.user.username,
+  // });
   io.emit('notification', {
     type: 'new_post',
     message: `New post by ${req.user.username}: ${newPost.title}`,

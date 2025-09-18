@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Learning React",
       "content": "React is awesome for building UIs! 🚀",
-      "likes": 25,
+      "likes": 34,
       "author": "TechGuru",
       "comments": [
         {
@@ -21,6 +21,11 @@
           "id": 3,
           "text": "12wdw2",
           "author": "admin"
+        },
+        {
+          "id": 4,
+          "text": "good",
+          "author": "test"
         }
       ]
     },
@@ -28,7 +33,7 @@
       "id": 2,
       "title": "JS",
       "content": "Js JS JSjsjsjs",
-      "likes": 0,
+      "likes": 1,
       "author": "user",
       "comments": [
         {
@@ -61,7 +66,7 @@
       "id": 4,
       "title": "TS",
       "content": "TStSTSTS",
-      "likes": 30,
+      "likes": 47,
       "author": "admin",
       "comments": [
         {
@@ -77,6 +82,11 @@
         {
           "id": 3,
           "text": "Nice Post!",
+          "author": "user"
+        },
+        {
+          "id": 4,
+          "text": "workin!!",
           "author": "user"
         }
       ]
@@ -94,6 +104,12 @@
       "username": "admin",
       "email": "admin@gmail.com",
       "password": "$2b$10$kKYEIruj/26mqwZMJg36HeHehvzfWuOTQreByhGY7ufO825ciwhBy"
+    },
+    {
+      "id": 3,
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "$2b$10$ZLNh3hh5kxl2Ipfu41XSU.w/oFZSiBhcfEk0BaOPQpVXpCMPIpH4y"
     }
   ]
 }
