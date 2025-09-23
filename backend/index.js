@@ -12,8 +12,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'http://localhost:5173',
-    methods: ['GET', 'POST'],
+    origin: ["http://localhost:5173", "https://tech-pulse-ochre.vercel.app"],
+    methods: ['GET', 'POST','PUT'],
     credentials: true,
   },
 });

@@ -90,6 +90,14 @@
           "author": "user"
         }
       ]
+    },
+    {
+      "id": 5,
+      "title": "Learn About Deployment",
+      "content": "Deployment is the crucial part of the complete project.\nMonitoring the project in the production env is important\n",
+      "likes": 3,
+      "author": "test",
+      "comments": []
     }
   ],
   "users": [

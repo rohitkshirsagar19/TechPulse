@@ -12,9 +12,11 @@ function HomePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  const API_BASE_URL = 'https://techpulse-trev.onrender.com';
+
   useEffect(() => {
     axios
-      .get('http://localhost:3001/api/posts')
+      .get(`${API_BASE_URL}/api/posts`)
       .then((response) => {
         setPosts(response.data);
         setLoading(false);
@@ -34,7 +36,7 @@ function HomePage() {
       const post = posts.find((p) => p.id === postId);
       const updatedPost = { ...post, likes: post.likes + 1 };
       const response = await axios.put(
-        `http://localhost:3001/api/posts/${postId}`,
+        `${API_BASE_URL}/api/posts/${postId}`,
         updatedPost,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -53,7 +55,7 @@ function HomePage() {
     }
     try {
       const response = await axios.post(
-        'http://localhost:3001/api/posts',
+        `${API_BASE_URL}/api/posts`,
         {
           id: posts.length + 1,
           title: newPost.title,
@@ -84,7 +86,7 @@ function HomePage() {
         { id: post.comments.length + 1, text: comment.text, author: comment.author },
       ];
       const response = await axios.put(
-        `http://localhost:3001/api/posts/${postId}`,
+        `${API_BASE_URL}/api/posts/${postId}`,
         {
           ...post,
           comments: updatedComments,
